@@ -1,8 +1,8 @@
 #ifndef USER_INPUT
 #define USER_INPUT
-#define USER_INPUT_MAX_SIZE 128
 
 #include "_strlen.h"
+#include "hsh.h"
 
 #endif
 

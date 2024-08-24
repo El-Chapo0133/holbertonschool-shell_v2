@@ -46,11 +46,11 @@ char *get_user_input(void)
 			free(buf);
 			exit(END_ERROR);
 		}
+		/* break when EOF of new-line */
 		if (c == EOF || c == '\n')
-		{
 			break;
-		}
 
+		/* in case max-size is exceeded, realloc with new-size */
 		if (index >= USER_INPUT_MAX_SIZE)
 		{
 			buf = realloc(buf, sizeof(char) * (USER_INPUT_MAX_SIZE + index));
