@@ -13,7 +13,6 @@ int print_all_envs(void)
 		PRINT(head->env);
 		PRINT("\n");
 
-	
 		head = head->next;
 	}
 	return (0);
@@ -46,9 +45,7 @@ int insert_new_env(char *env)
 	}
 
 	while (head->next != NULL)
-	{
 		head = head->next;
-	}
 	head->next = new_env;
 
 	return (0);
