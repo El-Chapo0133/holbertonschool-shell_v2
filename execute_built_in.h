@@ -11,6 +11,7 @@
 #include "cd.h"
 #include "help.h"
 #include "echo.h"
+#include "env.h"
 
 typedef struct BuiltIn
 {

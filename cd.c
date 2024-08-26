@@ -2,7 +2,12 @@
 
 int change_dir(char **cmd)
 {
-	if (cmd == NULL)
-		PRINT("YO");
-	return (0);
+	int status;
+
+	if (cmd == NULL || cmd[1] == NULL)
+		return (-1);
+
+	status = chdir(cmd[1]);
+
+	return (status);
 }
