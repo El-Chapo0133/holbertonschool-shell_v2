@@ -8,7 +8,7 @@ void remove_coments(char *str)
 {
 	int index, length = _strlen(str);
 	int is_comment = false;
-	
+
 	for (index = 0; index < length; index++)
 	{
 		if (str[index] == '#')
@@ -70,7 +70,7 @@ char **tokenize(char *str)
 	const char *separator = " ";
 
 	int index = 0;
-	char **buf = malloc(sizeof(char*) * 1);
+	char **buf = malloc(sizeof(char *) * 1);
 	char *token = strtok(str, separator);
 
 	if (token == NULL)
@@ -90,7 +90,7 @@ char **tokenize(char *str)
 			break;
 
 		/* reallocate for next token */
-		buf = realloc(buf, sizeof(char*) * (index + 1));
+		buf = realloc(buf, sizeof(char *) * (index + 1));
 	}
 
 	return (buf);

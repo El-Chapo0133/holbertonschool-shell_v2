@@ -9,6 +9,7 @@
 int _strlen(char *str)
 {
 	int index;
+
 	for (index = 0; str[index] != '\0'; index++);
 	return (index);
 }

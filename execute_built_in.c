@@ -10,8 +10,9 @@ int execute_built_in(char **cmd)
 		{ "history", print_history },
 		{ "env", env }
 	};
+
 	int index;
-	
+
 	if (_strcmp(cmd[0], "exit") == 0)
 		return (1);
 	for (index = 0; index < 5; index++)
