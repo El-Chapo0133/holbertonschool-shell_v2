@@ -46,8 +46,7 @@ int main(void)
 		/* append command to history */
 		append_cmd(_strcat(user_input_tokenized));
 	}
-	/* free the linked lists */
 	free_history();
 	free_envs();
-	return (END_SUCCESS);	
+	return (END_SUCCESS);
 }
