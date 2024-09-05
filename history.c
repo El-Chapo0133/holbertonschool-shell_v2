@@ -5,7 +5,7 @@ static struct HistoryNode *head_history;
 /**
  * append_cmd - append a command to linked list history
  * @cmd: command used
- * 
+ *
  * Return: void
  */
 void append_cmd(char *cmd)
@@ -20,7 +20,7 @@ void append_cmd(char *cmd)
 	}
 	node->cmd = cmd;
 	node->next = NULL;
-	
+
 	/* first node */
 	if (head_history == NULL)
 	{
@@ -52,7 +52,7 @@ int print_history(char **cmd)
 	int index = 0, bits;
 	char *buf = malloc(sizeof(char) * 7);
 	HistoryNode *node = head_history;
-	
+
 	if (cmd == NULL)
 		return (-1);
 	while (node != NULL)
@@ -66,7 +66,7 @@ int print_history(char **cmd)
 		PRINT(buf);
 		PRINT(node->cmd);
 		PRINT("\n");
-		
+
 		index++;
 		node = node->next;
 	}
@@ -81,6 +81,7 @@ int print_history(char **cmd)
 void free_history(void)
 {
 	struct HistoryNode *next;
+	
 	while (head_history != NULL)
 	{
 		next = head_history->next;

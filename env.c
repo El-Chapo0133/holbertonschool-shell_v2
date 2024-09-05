@@ -1,7 +1,6 @@
 #include "env.h"
 
 
-extern char **environ;
 static struct EnvVar *EnvVars;
 
 int print_all_envs(void)
@@ -35,6 +34,7 @@ int insert_new_env(char *env)
 {
 	struct EnvVar *head = EnvVars;
 	struct EnvVar *new_env = malloc(sizeof(EnvVar));
+
 	new_env->env = env;
 	new_env->next = NULL;
 
@@ -54,6 +54,7 @@ int insert_new_env(char *env)
 void free_envs(void)
 {
 	struct EnvVar *temp;
+
 	while (EnvVars != NULL)
 	{
 		temp = EnvVars->next;

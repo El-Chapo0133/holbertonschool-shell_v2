@@ -4,6 +4,8 @@
 #include "hsh.h"
 #include <string.h>
 
+extern char **environ;
+
 typedef struct EnvVar
 {
 	char *env;
