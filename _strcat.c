@@ -19,7 +19,9 @@ char *_strcat(char **strings)
 		return (NULL);
 	while (strings[index] != NULL)
 	{
-		for (s_index = 0; s_index < _strlen(strings[index]); s_index++)
+		for (s_index = 0;
+			s_index < _strlen(strings[index]);
+			s_index++)
 		{
 			if (c_index >= USER_INPUT_MAX_SIZE)
 				buf = realloc(buf, sizeof(char) * c_index);

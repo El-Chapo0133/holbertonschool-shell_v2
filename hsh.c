@@ -29,13 +29,6 @@ int main(void)
 		/* print hsh prompt */
 		PRINT("hsh> ");
 
-		if (CTRL_C == true)
-		{
-			PRINT("\n");
-			CTRL_C = false;
-			continue;
-		}
-
 		/* get and tokenize user input */
 		user_input_tokenized = get_user_input_tokenized();
 		/* when no user input, skip to next loop */
