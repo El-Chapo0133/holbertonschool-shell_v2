@@ -10,12 +10,13 @@ int execute_bin(char **cmd)
 		return (-1);
 
 	/* Build the argument list as execvp want it */
-	while (cmd[cmd_length++] != NULL);
+	while (cmd[cmd_length++] != NULL)
+		;
 
-	arguments = malloc(sizeof(char*) * (cmd_length + 1));
+	arguments = malloc(sizeof(char *) * (cmd_length + 1));
 	if (arguments == NULL) /* Memory error :( */
 		return (-1);
-	
+
 	for (index = 0; index < cmd_length; index++)
 		arguments[index] = cmd[index];
 
