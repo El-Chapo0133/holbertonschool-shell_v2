@@ -2,7 +2,7 @@
 
 /**
  * _strcat - concatenate an array of strings to
- * 	one string separated with spaces
+ *	one string separated with spaces
  * @strings: array of strings to concatenate
  *
  * Return: a string
