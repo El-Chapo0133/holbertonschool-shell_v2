@@ -1,7 +1,8 @@
 #include "_strcat.h"
 
 /**
- * _strcat - concatenate an array of strings to one string separated with spaces
+ * _strcat - concatenate an array of strings to
+ * 	one string separated with spaces
  * @strings: array of strings to concatenate
  *
  * Return: a string
@@ -10,10 +11,6 @@ char *_strcat(char **strings)
 {
 	char *buf = malloc(sizeof(char) * USER_INPUT_MAX_SIZE);
 	int index = 0, c_index = 0, s_index;
-
-	/*for (index = 0; strings[index] != NULL; index++);
-	printf("%d\n", index);
-	index = 0;*/
 
 	if (strings == NULL)
 		return (NULL);

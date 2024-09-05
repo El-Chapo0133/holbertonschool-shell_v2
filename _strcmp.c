@@ -7,7 +7,7 @@
  *
  * Return: 0 when they are the same, otherwise 1
  */
-int _strcmp(char *str1, char* str2)
+int _strcmp(char *str1, char *str2)
 {
 	int index = 0, length1 = _strlen(str1), length2 = _strlen(str2);
 

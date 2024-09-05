@@ -2,7 +2,7 @@
 #define HELP
 
 #include "hsh.h"
-#include <dirent.h> 
+#include <dirent.h>
 
 int print_help(char **cmd);
 

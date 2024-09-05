@@ -1,10 +1,10 @@
+#ifndef EXECUTE_BUILT_IN
+#define EXECUTE_BUILT_IN
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "_strcmp.h"
 #include "hsh.h"
-
-#ifndef BUILT_IN
-#define BUILT_IN
 
 /* BUILT-IN INCLUDES */
 #include "history.h"
