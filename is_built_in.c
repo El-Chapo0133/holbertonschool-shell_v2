@@ -10,7 +10,7 @@ int check_is_built_in(char *str)
 {
 	char *functions[] = { "exit", "cd", "help", "echo", "history", "env" };
 	int index;
-	
+
 	for (index = 0; index < 6; index++)
 		if (_strcmp(functions[index], str) == 0)
 			return (true);
