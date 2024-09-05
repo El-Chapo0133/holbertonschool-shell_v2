@@ -1,5 +1,5 @@
-#ifndef HELP
-#define HELP
+#ifndef ECHO
+#define ECHO
 
 #include "hsh.h"
 
