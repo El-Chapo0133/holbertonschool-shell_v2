@@ -8,6 +8,7 @@ void remove_coments(char *str)
 {
 	int index, length = _strlen(str);
 	int is_comment = false;
+	
 	for (index = 0; index < length; index++)
 	{
 		if (str[index] == '#')
@@ -33,12 +34,11 @@ char *get_user_input(void)
 		PRINT("Memory error :(");
 		return (NULL);
 	}
-
 	index = 0;
 	while (true)
 	{
 		fflush(stdin);
-		// read 1 char from stdin fd
+		/* read 1 char from stdin fd */
 		bits_read = read(STDIN_FILENO, &c, 1);
 		if (bits_read == 0)
 		{
@@ -49,7 +49,6 @@ char *get_user_input(void)
 		/* break when EOF of new-line */
 		if (c == EOF || c == '\n')
 			break;
-
 		/* in case max-size is exceeded, realloc with new-size */
 		if (index >= USER_INPUT_MAX_SIZE)
 		{
@@ -60,12 +59,9 @@ char *get_user_input(void)
 				return (NULL);
 			}
 		}
-
 		buf[index++] = c;
 	}
-
 	remove_coments(buf);
-
 	return (buf);
 }
 
