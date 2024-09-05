@@ -81,7 +81,7 @@ int print_history(char **cmd)
 void free_history(void)
 {
 	struct HistoryNode *next;
-	
+
 	while (head_history != NULL)
 	{
 		next = head_history->next;

@@ -1,13 +1,10 @@
 #include "hsh.h"
 
 struct sigaction old_action;
-volatile int CTRL_C = false;
 
 void sigint_handler(int sig_no)
 {
 	/* handler for any signals */
-	if (sig_no == 2)
-		CTRL_C = true;
 }
 
 int main(void)
@@ -15,7 +12,7 @@ int main(void)
 	char **user_input_tokenized;
 	int is_built_in, status;
 	struct sigaction s_action;
-	
+
 	memset(&s_action, 0, sizeof(s_action));
 	s_action.sa_handler = &sigint_handler;
 	sigaction(SIGINT, &s_action, &old_action);
@@ -41,7 +38,7 @@ int main(void)
 		{
 			status = execute_built_in(user_input_tokenized);
 			if (status == 1)
-				exit (END_SUCCESS);
+				exit(END_SUCCESS);
 			else if (status != 0)
 				PRINT("ERROR ON BUILT_IN\n");
 		}
