@@ -12,6 +12,7 @@
 #include "help.h"
 #include "echo.h"
 #include "env.h"
+#include "exit.h"
 
 /**
  * struct BuiltIn - object with name and a function associated
