@@ -47,13 +47,11 @@ You're all good to use the shell either in Interactive mode, to do so enter in y
 
 Then a prompt will be displayed, and you can enter commands.
 
-Authors
+## Authors
 The following person worked on this project:
 
-LEVEQUE Loris
-
-  
-https://github.com/El-Chapo0133
+- LEVEQUE Loris <9601@holbertonstudents.com>
+- https://github.com/El-Chapo0133
 
 License
 This Project is open-source, free to download and use without permissions.
