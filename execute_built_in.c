@@ -9,6 +9,7 @@
  */
 int execute_built_in(char **cmd)
 {
+	/* array of built_ins */
 	struct BuiltIn built_in[5] = {
 		{ "cd", change_dir },
 		{ "echo", echo },
