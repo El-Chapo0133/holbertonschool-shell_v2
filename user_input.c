@@ -4,6 +4,12 @@
 #include "user_input.h"
 #include "hsh.h"
 
+/**
+ * remove_coments - change all chars after '#'
+ * @str: str to change
+ *
+ * Return: void
+ */
 void remove_coments(char *str)
 {
 	int index, length = _strlen(str);
@@ -23,6 +29,11 @@ void remove_coments(char *str)
 	}
 }
 
+/**
+ * get_user_input - read user input from stdin
+ *
+ * Return: str of user input
+ */
 char *get_user_input(void)
 {
 	char *buf = malloc(sizeof(char) * USER_INPUT_MAX_SIZE);
@@ -65,6 +76,12 @@ char *get_user_input(void)
 	return (buf);
 }
 
+/**
+ * tokenize - split char* from spaces
+ * @str: str to tokenize
+ *
+ * Return: array of char* without spaces
+ */
 char **tokenize(char *str)
 {
 	const char *separator = " ";
@@ -96,6 +113,11 @@ char **tokenize(char *str)
 	return (buf);
 }
 
+/**
+ * get_user_input_tokenized - read user input and tokenize it
+ *
+ * Return: array of char* without spaces
+ */
 char **get_user_input_tokenized(void)
 {
 	return (tokenize(get_user_input()));

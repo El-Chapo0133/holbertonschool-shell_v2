@@ -3,6 +3,11 @@
 
 static struct EnvVar *EnvVars;
 
+/**
+ * print_all_envs - print_all_envs
+ *
+ * Return: -1 if error, 0 if success
+ */
 int print_all_envs(void)
 {
 	struct EnvVar *head = EnvVars;
@@ -17,6 +22,11 @@ int print_all_envs(void)
 	return (0);
 }
 
+/**
+ * load_base_env - load base envs
+ *
+ * Return: -1 if error, 0 if success
+ */
 int load_base_env(void)
 {
 	int index = 0, status;
@@ -30,6 +40,12 @@ int load_base_env(void)
 	return (0);
 }
 
+/**
+ * insert_new_env - insert new env
+ * @env: new env to insert
+ *
+ * Return: -1 if error, 0 if success
+ */
 int insert_new_env(char *env)
 {
 	struct EnvVar *head = EnvVars;
@@ -51,6 +67,11 @@ int insert_new_env(char *env)
 	return (0);
 }
 
+/**
+ * free_envs - free all envs
+ *
+ * Return: void
+ */
 void free_envs(void)
 {
 	struct EnvVar *temp;
@@ -64,6 +85,12 @@ void free_envs(void)
 	}
 }
 
+/**
+ * env - print all env if they exists
+ * @cmd: command passed
+ *
+ * Return: -1 if error, 0 if success
+ */
 int env(char **cmd)
 {
 	if (cmd == NULL)

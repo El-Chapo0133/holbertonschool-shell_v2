@@ -1,5 +1,11 @@
 #include "exec_bin.h"
 
+/**
+ * execute_bin - look for a binary in "\bin" and execute it
+ * @cmd: command passed
+ *
+ * Return: -1 if error, 0 if success
+ */
 int execute_bin(char **cmd)
 {
 	pid_t pid;

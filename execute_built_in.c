@@ -1,6 +1,12 @@
 #include "execute_built_in.h"
 
 
+/**
+ * execute_built_in - execute built in function
+ * @cmd: command passed
+ *
+ * Return: -1 if error, 0 if success
+ */
 int execute_built_in(char **cmd)
 {
 	struct BuiltIn built_in[5] = {

@@ -1,6 +1,12 @@
 #include "cd.h"
 
 
+/**
+ * _atoi - define target dif
+ * @cmd: command passed
+ *
+ * Return: string of the target dir
+ */
 char *define_target_dir(char **cmd)
 {
 	if (cmd[1] == NULL)
@@ -11,6 +17,12 @@ char *define_target_dir(char **cmd)
 		return (cmd[1]);
 }
 
+/**
+ * change_dir - change working directory
+ * @cmd: command passed
+ *
+ * Return: -1 if error, 0 if success
+ */
 int change_dir(char **cmd)
 {
 	int status;

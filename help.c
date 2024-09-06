@@ -1,5 +1,11 @@
 #include "help.h"
 
+/**
+ * print_help - print help
+ * @cmd: command passed
+ *
+ * Return: -1 if error, 0 if success
+ */
 int print_help(char **cmd)
 {
 	DIR *d;
