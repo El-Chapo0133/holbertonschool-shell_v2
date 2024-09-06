@@ -13,14 +13,14 @@ void handle_redirections(char **cmd)
 	{
 		if (_strcmp(cmd[index], ">") == 0 && cmd[index + 1] != NULL)
 		{
-			fd = open(cmd[index + 1], 0_CREAT);
+			fd = open(cmd[index + 1], O_CREAT);
 			dup2(fd, 1);
 			close(fd);
 			index++;
 		}
 		else if (_strcmp(cmd[index], "|") == 0 && cmd[index + 1] != NULL)
 		{
-			fd = open(cmd[index + 1], 0_RDONLY);
+			fd = open(cmd[index + 1], O_RDONLY);
 			dup2(fd, 0);
 			close(fd);
 			index++;
