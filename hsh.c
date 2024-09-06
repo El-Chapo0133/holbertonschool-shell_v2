@@ -11,6 +11,8 @@ struct sigaction old_action;
 void sigint_handler(int sig_no)
 {
 	/* handler for any signals */
+	if (sig_no == 2)
+		return;
 }
 
 /**
