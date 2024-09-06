@@ -18,7 +18,6 @@ typedef struct RedirectTo
 	char *from;
 }
 
-struct RedirectTo *find_redirections(char **cmd);
 void handle_redirections(char **cmd);
 
 #endif
