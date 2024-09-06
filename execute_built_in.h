@@ -13,6 +13,11 @@
 #include "echo.h"
 #include "env.h"
 
+/**
+ * struct BuiltIn - object with name and a function associated
+ * @cmd: command
+ * @fun: function associated
+ */
 typedef struct BuiltIn
 {
 	char *cmd;

@@ -44,6 +44,7 @@ void append_cmd(char *cmd)
 
 /**
  * print_history - print the linked list with an index to each
+ * @cmd: command passed
  *
  * Return: void
  */

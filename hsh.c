@@ -2,11 +2,22 @@
 
 struct sigaction old_action;
 
+/**
+ * sigint_handler - handler for a sigaction
+ * @sig_no: number of sigint passed
+ *
+ * Return: void
+ */
 void sigint_handler(int sig_no)
 {
 	/* handler for any signals */
 }
 
+/**
+ * main - this is the main function, are you dumb or what
+ *
+ * Return: exit code
+ */
 int main(void)
 {
 	char **user_input_tokenized;

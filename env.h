@@ -6,6 +6,11 @@
 
 extern char **environ;
 
+/**
+ * struct EnvVar - node of linked list envs
+ * @env: env name '=' env values
+ * @next: next node in linked list
+ */
 typedef struct EnvVar
 {
 	char *env;

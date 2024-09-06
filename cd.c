@@ -2,7 +2,7 @@
 
 
 /**
- * _atoi - define target dif
+ * define_target_dir - define target dif
  * @cmd: command passed
  *
  * Return: string of the target dir
