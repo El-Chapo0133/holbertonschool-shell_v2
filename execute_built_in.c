@@ -9,7 +9,7 @@
  */
 int execute_built_in(char **cmd)
 {
-	struct *BuiltIn built_in = malloc(5 * sizeof(BuiltInt));
+	struct BuiltIn *built_in = malloc(5 * sizeof(BuiltInt));
 
 	if (built_in == NULL)
 		return (-1);
