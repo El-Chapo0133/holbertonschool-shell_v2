@@ -9,18 +9,15 @@
  */
 int execute_built_in(char **cmd)
 {
-	/**
-	 * @built_in: array of built in functions
-	 *
-	 * struct BuiltIn: it's the BuiltIn struct
-	 */
-	struct BuiltIn built_in[5] = {
-		{ "cd", change_dir },
-		{ "echo", echo },
-		{ "help", print_help },
-		{ "history", print_history },
-		{ "env", env }
-	};
+	struct *BuiltIn built_in = malloc(5 * sizeof(BuiltInt));
+
+	if (built_in == NULL)
+		return (-1);
+	built_in[0] = { "cd", change_dir };
+	built_in[1] = { "echo", echo };
+	built_in[2] = { "help", print_help };
+	built_in[3] = { "history", print_history };
+	built_in[4] = { "env", env };
 
 	int index;
 
