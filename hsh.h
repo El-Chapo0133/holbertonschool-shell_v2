@@ -13,6 +13,8 @@
 #include "execute_built_in.h"
 #include "env.h"
 #include "exec_bin.h"
+#include "redirection.h"
+
 
 #define true 1
 #define false 0

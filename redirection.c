@@ -7,7 +7,7 @@
  *
  * Return: struct with both redirection or NULL
  */
-RedirectTo *find_redirections(char **cmd)
+struct RedirectTo *find_redirections(char **cmd)
 {
 	RedirectTo *redirect = malloc(sizeof(RedirectTo));
 	int index, fd;

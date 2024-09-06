@@ -5,9 +5,6 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-#define true 1
-#define false 0
-
 /**
  * struct RedirectTo - define the redirection from and to
  * if NULL, no need to redirect
@@ -21,7 +18,7 @@ typedef struct RedirectTo
 	char *from;
 }
 
-RedirectTo *find_redirections(char **cmd);
+struct RedirectTo *find_redirections(char **cmd);
 void handle_redirections(char **cmd);
 
 #endif
