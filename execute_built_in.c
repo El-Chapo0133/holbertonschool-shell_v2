@@ -11,6 +11,8 @@ int execute_built_in(char **cmd)
 {
 	/**
 	 * @built_in: array of built in functions
+	 *
+	 * struct BuiltIn: it's the BuiltIn struct
 	 */
 	struct BuiltIn built_in[5] = {
 		{ "cd", change_dir },
@@ -25,11 +27,7 @@ int execute_built_in(char **cmd)
 	if (_strcmp(cmd[0], "exit") == 0)
 		return (1);
 	for (index = 0; index < 5; index++)
-	{
 		if (_strcmp(built_in[index].cmd, cmd[0]) == 0)
-		{
 			return ((built_in[index]).fun(cmd));
-		}
-	}
 	return (-1);
 }
