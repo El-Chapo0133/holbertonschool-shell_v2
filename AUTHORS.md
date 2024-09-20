@@ -1,5 +1,3 @@
-### AUTHORS.md
-This file list all members of the project
+#clone.
 
-# List of Contributors
-- LEVEQUE Loris <9601@holbertonstudents.com> 
+charlyhackr <930@holbertonschool.com>

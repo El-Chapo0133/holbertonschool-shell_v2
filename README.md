@@ -1,57 +1,50 @@
-# Shell v2 Project
+# An implementation of sh in C programming language
 
 ## Overview
-Shell v2 is a custom shell implementation developed in C. It aims to replicate key functionalities of a Unix-like shell, including command execution, built-in commands, and environment variable management. This project serves as an advanced exercise in system &algorithm programming.
 
-## Features
+**Shell** - is a Holberton school group project. The task is to write a simple UNIX command interpreter.
 
-**Command Execution**: Execute external programs and commands.
+Table of contents
+=================
 
-**Built-in Commands**: Support for commands such as cd, exit, and setenv.
+<!--ts-->
+   * [Overview](#overview)
+   * [Table of contents](#table-of-contents)
+   * [General Requirements](#requirements)
+   * [Authorized functions and macros](#list-of-allowed-functions-and-system-calls)
+   * [Compilation](#compilation)
+   * [Tasks](#tasks)
+   * [Installation](#installation)
+   * [Examples](#examples)
+   * [Authors](#authors)
+<!--te-->
 
-**Environment Variable Management**: Custom implementation of setenv and unsetenv for managing environment variables.
+*******************************************************************************
 
-**Pipes and Redirection**: Handling of input/output redirection and pipes for inter-process communication.
+## Installation and Compilation
 
-**Error Handling**: Comprehensive error reporting for various system call failures.
-
-## Getting Started
-
-### Requirements
-
-Simple shell project was compiled on Ubuntu 20.04 LTS using gcc compiler, with following options
+In order to use the Shell, you need to clone this repository to your local machine
 ```
-gcc -Wall -Werror Wextra -pedantic -std=gnu89
+$ git clone https://github.com/charlyhackr/shell_v2.git
 ```
-
-### Usage
-Clone this repository: 
+After cloning go to the simple_shell folder
 ```
-git clone https://github.com/El-Chapo0133/holbertonschool-shell_v2.git%60%60%60
+$ cd shell_v2
 ```
-
-Switch inside the directory:
+Run make to compile it
 ```
-cd holbertonschool-simple_shell
+$ make
 ```
-
-Compile all the files using the Makefile (target all):
-```
-make all
-```
-
-You're all good to use the shell either in Interactive mode, to do so enter in your terminal:
+Run shell
 ```
 ./hsh
 ```
+*****************************************************************************************************
 
-Then a prompt will be displayed, and you can enter commands.
+
+## Examples
+```
+```
 
 ## Authors
-The following person worked on this project:
-
-- LEVEQUE Loris <9601@holbertonstudents.com>
-- https://github.com/El-Chapo0133
-
-License
-This Project is open-source, free to download and use without permissions.
+[Carlos Alvarez](https://github.com/charlyhackr)

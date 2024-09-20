@@ -1,93 +1,72 @@
-#include "history.h"
-
-static struct HistoryNode *head_history;
+#include "shell.h"
 
 /**
- * append_cmd - append a command to linked list history
- * @cmd: command used
- *
- * Return: void
+ * read_history - reads input command history from file
+ * @args: arguments structure
  */
-void append_cmd(char *cmd)
+void read_history(arguments *args)
 {
-	struct HistoryNode *node = malloc(sizeof(HistoryNode));
-	struct HistoryNode *temp_head;
+	char *home = _getenv("HOME=", args);
+	char buf[PATH_MAX] = {0};
+	char *str;
+	int fd;
 
-	if (node == NULL)
+	if (!home)
+		return;
+	sprintf(buf, "%s/%s", home, HISTORY_FILE);
+	fd = open(buf, O_RDONLY);
+	if (fd == -1)
+		return;
+	while ((str = _getline(fd)))
 	{
-		PRINT("Memory error :(");
-		exit(END_ERROR);
+		en_queue(args->history, str);
+		free(str);
 	}
-	node->cmd = cmd;
-	node->next = NULL;
-
-	/* first node */
-	if (head_history == NULL)
-	{
-		head_history = node;
-	}
-	/* move to last node and append */
-	else
-	{
-		temp_head = head_history;
-		while (temp_head != NULL)
-		{
-			if (temp_head->next == NULL)
-			{
-				temp_head->next = node;
-				break;
-			}
-			temp_head = temp_head->next;
-		}
-	}
+	close(fd);
 }
 
 /**
- * print_history - print the linked list with an index to each
- * @cmd: command passed
- *
- * Return: void
+ * write_history - writes input command history to file
+ * @args: arguments structure
  */
-int print_history(char **cmd)
+void write_history(arguments *args)
 {
-	int index = 0, bits;
-	char *buf = malloc(sizeof(char) * 7);
-	HistoryNode *node = head_history;
+	char *home = _getenv("HOME=", args);
+	list *cur = args->history->first;
+	char buf[PATH_MAX] = {0};
+	int fd;
 
-	if (cmd == NULL)
-		return (-1);
-	while (node != NULL)
+	if (!home)
+		return;
+	sprintf(buf, "%s/%s", home, HISTORY_FILE);
+	fd = open(buf, O_CREAT | O_TRUNC | O_WRONLY, 0666);
+	if (fd == -1)
 	{
-		/* convert int index to char* with format */
-		bits = sprintf(buf, " %d  ", index);
-		if (bits == 0) /* Problems :( */
-			break;
+		error(args);
+		return;
+	}
+	for (; cur; cur = cur->next)
+	{
+		write(fd, cur->str, _strlen(cur->str));
+		write(fd, "\n", 1);
+	}
+	close(fd);
+}
 
-		/* write history as " <index>  <cmd>\n" */
-		PRINT(buf);
-		PRINT(node->cmd);
-		PRINT("\n");
+/**
+ * history - prints out shell input history preceded by command number
+ * @args: arguments structure
+ *
+ * Return: 0
+ */
+int history(arguments *args)
+{
+	list *cur = args->history->first;
+	size_t i;
 
-		index++;
-		node = node->next;
+	for (i = args->history->pos; cur; ++i, cur = cur->next)
+	{
+		fprintf(stdout, "%lu: %s\n", i, cur->str);
 	}
 	return (0);
-}
-
-/**
- * free_history - free the whole linked list
- *
- * Return: void
- */
-void free_history(void)
-{
-	struct HistoryNode *next;
-
-	while (head_history != NULL)
-	{
-		next = head_history->next;
-		free(head_history->cmd);
-		free(head_history);
-		head_history = next;
-	}
 }

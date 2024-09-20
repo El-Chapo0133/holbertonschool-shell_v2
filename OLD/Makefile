@@ -2,12 +2,12 @@
 # List of variables
 SHELL = /bin/bash
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -pedantic -std=gnu89 -g
+CFLAGS = -Wall -Werror -Wextra -pedantic -std=gnu89
 # name of the executable
 NAME = hsh
 # Find all c files in current directory and substitute
 # extension with object files (.o)
-OBJ = $(patsubst %.c,%.o, $(wildcard *.c))
+OBJ = $(wildcard *.c)
 HEADERS = $(wildcard *.h)
 LINTER = betty
 
@@ -20,8 +20,8 @@ LINTER = betty
 all: $(NAME)
 
 # Compile executable from object files
-$(NAME): $(OBJ) $(HEADERS)
-	$(CC) -o $@ $^ $(CFLAGS)
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $^ -o $@
 
 .PHONY: clean, run, check, memcheck, memfull, test
 

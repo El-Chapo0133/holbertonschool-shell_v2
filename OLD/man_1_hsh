@@ -1,10 +1,10 @@
-.Dd 16/4/19=              
-.Dt Simple shell 1
+.Dd 01/09/24
+.Dt Shell V2
 .Os Ubuntu
-.Sh NAME                 
-.Nm "Simple shell"
+.Sh NAME
+.Nm "Shell V2"
 .Nd Custom implementation of shell.
-.Sh SYNOPSIS             
+.Sh SYNOPSIS 
 .Nm
 
 .Nd It takes no arguments
@@ -69,10 +69,10 @@ This shell runs any executable file from the PATH environmental variable, becaus
 
 
 .Sh FILES
-.Bl -tag -width "~/simple_shell/" -compact
-.It Pa /simple_shell/main.c
+.Bl -tag -width "~/shell_v2/" -compact
+.It Pa /shell_v2/hsh.c
 It is main file with entry point
-.It Pa /simple_shell/shell.c
+.It Pa /shell_v2/hsh.c
 It contains main function, or core of the shell 
 .El                      \" Ends the list
 .Sh SEE ALSO
@@ -84,6 +84,4 @@ It contains main function, or core of the shell
 .Bl
 We are not handling &&, ||, ; and other special characters, we have some issues with setenv, cd 
 .Sh AUTHORS
-.Ar Farrukh Akhrarov
-
-.Ar Tim Assavarat
+.Ar Loris Lévêque
